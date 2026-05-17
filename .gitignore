@@ -1,0 +1,27 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Secretos y configs locales
+.env
+config.py
+.streamlit/secrets.toml
+
+# IDE y SO
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+# Datos crudos pesados (regenerables con descargar_*.py)
+online_retail_II.xlsx
+panaderia_edinburgh_raw.csv
