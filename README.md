@@ -1,4 +1,11 @@
-# Predicción de ventas con Machine Learning
+﻿# Predicción de ventas con Machine Learning
+
+> ### 🚀 Probar la app en vivo
+>
+> **https://prediccion-ventas-ml.streamlit.app**
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://prediccion-ventas-ml.streamlit.app)
+
 
 App de Streamlit que pronostica las ventas diarias de un negocio a partir de su histórico, usando **Random Forest + shrinkage semanal** (modelo principal) y **Prophet** (alternativo). Incluye **dos datasets reales** para comparar cómo rinde el mismo modelo en escenarios opuestos:
 
