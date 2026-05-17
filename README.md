@@ -159,7 +159,7 @@ Los **últimos 30 días del histórico se reservan** y no se le muestran al mode
 
 Una sola medición sobre 30 días es ruidosa. Para tener una señal sólida evaluamos cada modelo sobre **6 ventanas de 30 días** consecutivas (jun → dic 2011), reentrenando en cada una con todo lo anterior y promediando MAE. Para declarar un modelo "mejor" que otro exigimos además **paired t-test con p < 0.10** sobre los 6 folds.
 
-Resultado final tras 5 rondas de experimentación honesta (`experimento.py` → `experimento_v5.py`):
+Resultado final tras 5 rondas de experimentación honesta:
 
 | # | Modelo | MAE promedio | Std | Gana folds | p-value vs RF |
 |---|--------|--------------|-----|-----|---|
@@ -209,7 +209,7 @@ Después de probar 9 recetas distintas (ver tabla extendida abajo), **solo el sh
 5. Hiperparámetros de cada modelo (`n_estimators=400`, `max_depth=14`) son **defaults razonables**, no buscados via grid-search sobre el set de validación.
 6. Las features (lag_365, feriados UK, interacciones) se eligieron por **justificación a priori** (estacionalidad anual, calendario UK), no por mejorar un score específico.
 
-Los scripts `experimento.py`, `experimento_cv.py`, `experimento_v2.py`, `experimento_v3.py`, `experimento_v4.py` y `experimento_v5.py` reproducen toda la trayectoria de mejoras.
+La trayectoria completa de los experimentos (5 rondas, 30+ recetas evaluadas) está documentada en el historial de commits de este repositorio.
 
 ## Estructura del proyecto
 
@@ -219,12 +219,6 @@ Proyecto 6 - Prediccion de ventas con ML/
 ├── modelo.py               # Funciones de entrenamiento, validación y pronóstico
 ├── descargar_datos.py      # Descarga y procesa el dataset UCI Online Retail II
 ├── descargar_panaderia.py  # Descarga y procesa el dataset Bread Basket (panadería)
-├── experimento.py          # Comparación inicial de 5 recetas (1 ventana val + test)
-├── experimento_cv.py       # Cross-validation rolling de 6 folds — primer benchmark
-├── experimento_v2.py       # Ronda 2: LightGBM, stacking, features mejorados
-├── experimento_v3.py       # Ronda 3: tuning RF, ensembles ponderados
-├── experimento_v4.py       # Ronda 4: blends con pesos fijos
-├── experimento_v5.py       # Ronda 5 (final): paired t-test, encuentra al ganador
 ├── ventas_reales.csv       # Serie diaria UCI (generada por el script)
 ├── ventas_panaderia.csv    # Serie diaria panadería (generada por el script)
 ├── online_retail_II.xlsx   # Excel original de UCI (generado por el script)
